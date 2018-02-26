@@ -9,6 +9,7 @@ import {Observable} from "rxjs/Observable";
 import {RouterTestingModule} from "@angular/router/testing";
 import {HttpModule} from "@angular/http";
 import {By} from "@angular/platform-browser";
+import 'rxjs/add/observable/of';
 
 ////////  SPECS  /////////////
 
