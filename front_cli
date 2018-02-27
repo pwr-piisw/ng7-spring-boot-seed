@@ -1,0 +1,8 @@
+NODE_PATH=`pwd`/src/main/client/node
+YARN_PATH=$NODE_PATH/yarn/dist/bin
+PATH=$NODE_PATH:$YARN_PATH:$PATH
+QT_QPA_PLATFORM=""
+export NODE_PATH
+export YARN_PATH
+export PATH
+export QT_QPA_PLATFORM
