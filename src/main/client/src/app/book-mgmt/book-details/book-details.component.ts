@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {NgForm, AbstractControl} from '@angular/forms';
-import {ActivatedRoute, Router, Params} from '@angular/router';
+import {AbstractControl, NgForm} from '@angular/forms';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Book, BookService} from '../book.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class BookDetailsComponent implements OnInit {
 
   private static createErrorMessage(errorObject: {[key: string]: any}): string {
     if (errorObject) {
-      for (let errorCode in errorObject) {
+      for (const errorCode in errorObject) {
         if (errorObject.hasOwnProperty(errorCode)) {
           switch (errorCode) {
             case 'required':
@@ -63,7 +63,7 @@ export class BookDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       if (params['bookId']) {
-        let bookId: number = +params['bookId'];
+        const bookId: number = +params['bookId'];
         this.bookService.findOne(bookId).subscribe( book => {
           if (book) {
             this.currentBook = book;

@@ -1,9 +1,9 @@
-import {TestBed, async, ComponentFixture} from "@angular/core/testing";
-import {AppComponent} from "./app.component";
-import {RouterTestingModule} from "@angular/router/testing";
-import {GeneralModule} from "./general/general.module";
-import {BookMgmtModule} from "./book-mgmt/book-mgmt.module";
-import {BookService} from "./book-mgmt/book.service";
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import {GeneralModule} from './general/general.module';
+import {BookMgmtModule} from './book-mgmt/book-mgmt.module';
+import {BookService} from './book-mgmt/book.service';
 
 describe('AppComponent', () => {
     let fixture: ComponentFixture<AppComponent>;

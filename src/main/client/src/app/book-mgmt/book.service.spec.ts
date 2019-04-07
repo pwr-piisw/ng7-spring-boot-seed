@@ -68,9 +68,9 @@ describe('BookService', () => {
 
   it('should delete a book',
     inject([HttpTestingController, BookService], (backend: HttpTestingController, service: BookService) => {
-      //given
+      // given
       const book: Book = {id: 1003, author: 'John Example 3', title: 'By Example 3'};
-      //when
+      // when
       service.delete(book).subscribe(
         (response) => {
           expect(response.status).toEqual(200);

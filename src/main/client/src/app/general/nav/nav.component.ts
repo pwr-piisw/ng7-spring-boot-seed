@@ -1,5 +1,23 @@
-import {Component, Inject} from "@angular/core";
-import {DOCUMENT} from "@angular/platform-browser";
+import {Component, Inject} from '@angular/core';
+import {DOCUMENT} from '@angular/platform-browser';
+
+class CurrentBuild {
+  private _version: string;
+  private _timestamp: string;
+
+  constructor(version: string, timestamp: string) {
+    this._version = version;
+    this._timestamp = timestamp;
+  }
+
+  get version(): string {
+    return this._version;
+  }
+
+  get timestamp(): string {
+    return this._timestamp;
+  }
+}
 
 @Component({
     selector: 'app-nav',
@@ -8,7 +26,7 @@ import {DOCUMENT} from "@angular/platform-browser";
 })
 export class NavComponent {
     currentBuild: CurrentBuild;
-    navCollapsed: boolean = true;
+    navCollapsed = true;
 
     constructor(@Inject(DOCUMENT) private document: any) {
         this.setCurrentBuildInfoFromDocumentHeadMeta();
@@ -38,22 +56,4 @@ export class NavComponent {
     toggleNavigation(): void {
         this.navCollapsed = !this.navCollapsed;
     };
-}
-
-class CurrentBuild {
-    private _version: string;
-    private _timestamp: string;
-
-    constructor(version: string, timestamp: string) {
-        this._version = version;
-        this._timestamp = timestamp;
-    }
-
-    get version(): string {
-        return this._version;
-    }
-
-    get timestamp(): string {
-        return this._timestamp;
-    }
 }

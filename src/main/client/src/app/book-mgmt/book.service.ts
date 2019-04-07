@@ -5,9 +5,6 @@ import {HttpClient, HttpResponse} from '@angular/common/http';
 
 @Injectable()
 export class BookService {
-  private books: Book[] = [];
-  private sequencer: number = 1;
-  private booksFromBackend: boolean = false;
 
   constructor(private httpClient: HttpClient) {
   }
