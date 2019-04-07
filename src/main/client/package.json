@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build4prod": "node ./node_modules/@angular/cli/bin/ng build --prod",
-    "test4ci": "node ./node_modules/@angular/cli/bin/ng test --single-run --browsers=PhantomJS"
+    "test4ci": "node ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=PhantomJS"
   },
   "private": true,
   "dependencies": {
