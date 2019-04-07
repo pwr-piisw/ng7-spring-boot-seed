@@ -1,5 +1,5 @@
 <section class="book-details container">
-  <form #bookForm="ngForm" (ngSubmit)="save()" [class.ng-submitted]="submitted" novalidate>
+  <form #bookForm="ngForm" [class.ng-submitted]="submitted" novalidate>
     <div class="form-group row" [class.has-danger]="isFieldInvalid('titleField')">
       <label for="title" class="col-lg-1 col-form-label">Title:</label>
       <div class="col-lg-4">
@@ -22,7 +22,8 @@
       <div class="col-lg-1">
       </div>
       <div class="col-lg-4">
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button (click)="save()" class="btn btn-primary">Save</button>
+        <button class="btn" (click)="delete()">Delete</button>
       </div>
     </div>
   </form>

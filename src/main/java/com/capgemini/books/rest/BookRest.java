@@ -71,7 +71,7 @@ public class BookRest {
 
     @RequestMapping(value = "/books", method = RequestMethod.POST)
     public ResponseEntity<Book> saveBook(@RequestBody Book book) {
-        final long id = Optional.of(book.getId()).orElseGet(this::getNextValue);
+        final long id = Optional.ofNullable(book.getId()).orElseGet(this::getNextValue);
         final Book newBook = new Book(id, book.getAuthor(), book.getTitle());
         books.put(id, newBook);
         return ResponseEntity.ok(newBook);

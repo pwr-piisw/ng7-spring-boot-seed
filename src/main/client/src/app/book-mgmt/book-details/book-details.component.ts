@@ -40,9 +40,12 @@ export class BookDetailsComponent implements OnInit {
   save(): void {
     this.submitted = true;
     if (this.currentForm && this.currentForm.form && this.currentForm.form.valid) {
-      this.bookService.save(this.currentBook);
-      this.router.navigate(['/app/books']);
+      this.bookService.save(this.currentBook).subscribe(() => this.router.navigate(['/app/books']));
     }
+  }
+
+  delete() {
+    this.bookService.delete(this.currentBook).subscribe(() => this.router.navigate(['/app/books']));
   }
 
   getErrorMessageOfField(fieldName: string): string {
@@ -61,12 +64,13 @@ export class BookDetailsComponent implements OnInit {
     this.route.params.forEach((params: Params) => {
       if (params['bookId']) {
         let bookId: number = +params['bookId'];
-        let foundBook: Book = this.bookService.findOne(bookId);
-        if (foundBook) {
-          this.currentBook = foundBook;
-        } else {
-          this.router.navigate(['/app/book']);
-        }
+        this.bookService.findOne(bookId).subscribe( book => {
+          if (book) {
+            this.currentBook = book;
+          } else {
+            this.router.navigate(['/app/book']);
+          }
+        });
       }
     });
   }
