@@ -123,7 +123,9 @@
                                     <arguments>run-script build4prod</arguments>
                                 </configuration>
                             </execution>
-
+								
+								
+							<!--
                             <execution>
                                 <id>JavaScript Tests (npm run-script test4ci)</id>
                                 <phase>test</phase>
@@ -134,6 +136,7 @@
                                     <arguments>run-script test4ci</arguments>
                                 </configuration>
                             </execution>
+							-->
                         </executions>
                     </plugin>
                     <!-- Filtering the src/main/client/dist/index.html to set the current version and build timestamp as meta
